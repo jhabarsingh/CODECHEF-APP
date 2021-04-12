@@ -17,26 +17,24 @@ class ListContests(APIView):
         Return a list of all users.
         """
         url = "https://clist.by/"
+        html_content = requests.get(url).text
+        soup = BeautifulSoup(html_content, "lxml")
 
-		html_content = requests.get(url).text
+        contests = soup.find("div", attrs={"id": "contests"})
 
-		soup = BeautifulSoup(html_content, "lxml")
+        serializers = []
+        for i in contests.find_all("div", attrs={"class": "running"}):
+        	data = i.find("a", attrs={"class": "data-ace"})
+        	data = data["data-ace"]
+        	data = json.loads(data)
+        	obj = {}
+        	obj["event"] = data["title"]
+        	obj["url"] = data["desc"][5:]
+        	obj["organization"] = data["location"]
+        	obj["start_time"] = data["time"]["start"]
+        	obj["end_time"] = data["time"]["end"]
+        	serializers.append(obj)
 
-		contests = soup.find("div", attrs={"id": "contests"})
-
-		serializers = []
-		for i in contests.find_all("div", attrs={"class": "running"}):
-			data = i.find("a", attrs={"class": "data-ace"})
-			data = data["data-ace"]
-			data = json.loads(data)
-			obj = {}
-			obj["event"] = data["title"]
-			obj["url"] = data["desc"][5:]
-			obj["organization"] = data["location"]
-			obj["start_time"] = data["time"]["start"]
-			obj["end_time"] = data["time"]["end"]
-			serializer = ContestsSerializer(obj)
-			serializers.append(serializer)
-
-		contests = serializers
+        # serializer = ContestsSerializer(serializers[0], many=True)
+        contests = serializers
         return Response(contests)
