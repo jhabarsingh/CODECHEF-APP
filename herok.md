@@ -60,6 +60,5 @@
 	OR
 
 	heroku run bash
-
 	now you have ssh into heroku terminal 
 	```
