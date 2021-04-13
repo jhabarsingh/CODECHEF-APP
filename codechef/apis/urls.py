@@ -1,13 +1,13 @@
 from django.contrib import admin
 from django.urls import path, include
 from .views import (
-	ListContests
+	ListContests,
+	UsersDetail
 )
 
 app_name = "apis"
 
 urlpatterns = [
     path('contests/', ListContests.as_view(), name="contests"),
-    #freinds rating
-    #detail graph
+    path('details/', UsersDetail.as_view(), name="details")
 ]
