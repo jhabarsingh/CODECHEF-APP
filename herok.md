@@ -24,6 +24,9 @@
 	```
 	create a Procfile 
 	# data inside the procfile
-	web: gunicorn codechef/codechef.wsgi --log-file -
+	web: gunicorn --pythonpath app app.wsgi
 	```
-7. 
+7. Add Environment variables 
+	```
+	heroku config:set KEY=VALUE
+	```
