@@ -1,5 +1,7 @@
 # Hosting Website on Heroku
 
+> keep debug = True for testing while hosting
+
 1. install heroku cli on your machine
 
 2. authenticate your self
