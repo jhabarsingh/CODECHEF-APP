@@ -79,27 +79,27 @@ class UsersDetail(APIView):
             span = data[i].find("span").text
             details[label] = span
         a = -10
-        script = str(soup.find_all("script")[a])
+        # script = str(soup.find_all("script")[a])
 
-        contests = re.findall(r"{.+[:,].+}|\[.+[,:].+\]", script)[-1]
-        questions = re.findall(r"y:\d+", script)
+        # contests = re.findall(r"{.+[:,].+}|\[.+[,:].+\]", script)[-1]
+        # questions = re.findall(r"y:\d+", script)
 
-        nums = []
-        for i in questions[:-1]:
-            a = i.split(':')[-1]
-            nums.append(a)
+        # nums = []
+        # for i in questions[:-1]:
+        #     a = i.split(':')[-1]
+        #     nums.append(a)
 
-        questions = {}
-        questions["solutions_partially_accepted"] = nums[0]
-        questions["compile_error"] = nums[1]
-        questions["runtime_error"] = nums[2]
-        questions["time_limit_exceeded"] = nums[3]
-        questions["wrong_answers"] = nums[4]
-        questions["solution_accepted"] = nums[5]
+        # questions = {}
+        # questions["solutions_partially_accepted"] = nums[0]
+        # questions["compile_error"] = nums[1]
+        # questions["runtime_error"] = nums[2]
+        # questions["time_limit_exceeded"] = nums[3]
+        # questions["wrong_answers"] = nums[4]
+        # questions["solution_accepted"] = nums[5]
 
-        contests = json.loads(contests)
-        details["questions"] = questions
-        details["contests"] = contests
+        # contests = json.loads(contests)
+        # details["questions"] = questions
+        # details["contests"] = contests
 
         return Response(details)
 
