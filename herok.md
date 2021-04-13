@@ -32,3 +32,24 @@
 	```
 	heroku config:set KEY=VALUE
 	```
+
+8. Add Databas using heroku addon
+	```
+	heroku addons
+	heroku pg #get details about the plan
+	heroku addons:create heroku-postgresql:hobby-dev
+	sudo apt-get install libpq-dev python-dev
+	pip install psycopg2
+	pip install django-heroku
+	```
+
+9. Go To seting.py and add these 
+	```
+	#starts
+	import django_heroku
+
+	#end
+	django_heroku.settings(locals())
+	```
+
+10. 
