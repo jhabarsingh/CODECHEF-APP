@@ -52,4 +52,14 @@
 	django_heroku.settings(locals())
 	```
 
-10. 
+10. Migrate in heroku hosted app
+	```
+	heroku run python app/manage.py makemigrations
+	heroku run python app/manage.py migrate
+
+	OR
+
+	heroku run bash
+
+	now you have ssh into heroku terminal 
+	```
