@@ -46,7 +46,8 @@ class UsersDetail(APIView):
 
     def get(self, request, format=None):
         """
-        Return a list of all users.
+        Return detail of the users.
+        /?username=jhabarsingh
         """
         username = request.GET.get("username", "jhabarsingh")
         url = "https://www.codechef.com/users/" + username
@@ -78,30 +79,77 @@ class UsersDetail(APIView):
             label = data[i].find("label").text
             span = data[i].find("span").text
             details[label] = span
-        a = -10
-        # script = str(soup.find_all("script")[a])
-
-        # contests = re.findall(r"{.+[:,].+}|\[.+[,:].+\]", script)[-1]
-        # questions = re.findall(r"y:\d+", script)
-
-        # nums = []
-        # for i in questions[:-1]:
-        #     a = i.split(':')[-1]
-        #     nums.append(a)
-
-        # questions = {}
-        # questions["solutions_partially_accepted"] = nums[0]
-        # questions["compile_error"] = nums[1]
-        # questions["runtime_error"] = nums[2]
-        # questions["time_limit_exceeded"] = nums[3]
-        # questions["wrong_answers"] = nums[4]
-        # questions["solution_accepted"] = nums[5]
-
-        # contests = json.loads(contests)
-        # details["questions"] = questions
-        # details["contests"] = contests
 
         return Response(details)
+
+class QuestionsDetail(APIView):
+    """
+    View to list all contests in the system.
+    """
+
+    def get(self, request, format=None):
+        """
+        Return a list of questions solved by users.
+        """
+        username = request.GET.get("username", "jhabarsingh")
+        url = "https://www.codechef.com/users/" + username
+        
+        html_content = requests.get(url).text
+        soup = BeautifulSoup(html_content, "lxml")
+
+        details = {}
+
+        a = -10
+        script = str(soup.find_all("script")[a])
+
+        questions = re.findall(r"y:\d+", script)
+
+        nums = []
+        for i in questions[:-1]:
+            a = i.split(':')[-1]
+            nums.append(a)
+
+        questions = {}
+        questions["solutions_partially_accepted"] = nums[0]
+        questions["compile_error"] = nums[1]
+        questions["runtime_error"] = nums[2]
+        questions["time_limit_exceeded"] = nums[3]
+        questions["wrong_answers"] = nums[4]
+        questions["solution_accepted"] = nums[5]
+
+        details["questions"] = questions
+
+        return Response(details)
+
+
+class ContestsDetail(APIView):
+    """
+    View to list all contests in the system.
+    """
+
+    def get(self, request, format=None):
+        """
+        Return a list of contests given by users.
+        """
+        username = request.GET.get("username", "jhabarsingh")
+        url = "https://www.codechef.com/users/" + username
+        
+        html_content = requests.get(url).text
+        soup = BeautifulSoup(html_content, "lxml")
+
+        details = {}
+        
+        a = -10
+        script = str(soup.find_all("script")[a])
+
+        contests = re.findall(r"{.+[:,].+}|\[.+[,:].+\]", script)[-1]
+
+        contests = json.loads(contests)
+        details["contests"] = contests
+
+        return Response(details)
+
+
 
 
 
