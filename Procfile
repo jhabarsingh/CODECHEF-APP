@@ -1,1 +1,1 @@
-web: gunicorn codechef/codechef.wsgi --log-file -
+web: gunicorn --pythonpath codeforces codeforces.wsgi

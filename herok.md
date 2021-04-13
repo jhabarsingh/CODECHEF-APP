@@ -20,4 +20,10 @@
 	# in setting.py mention STATIC_ROOT variable where it will collect all static files
 	git push heroku main
 	``` 
-
+6. Add Procfile
+	```
+	create a Procfile 
+	# data inside the procfile
+	web: gunicorn codechef/codechef.wsgi --log-file -
+	```
+7. 
