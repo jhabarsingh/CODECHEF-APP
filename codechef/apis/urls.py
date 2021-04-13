@@ -4,7 +4,9 @@ from .views import (
 	ListContests,
 	UsersDetail,
 	QuestionsDetail,
-	ContestsDetail
+	ContestsDetail,
+	AnnouncementsDetail,
+	UpcomingContestDetail
 )
 
 app_name = "apis"
@@ -12,7 +14,8 @@ app_name = "apis"
 urlpatterns = [
     path('contests/', ListContests.as_view(), name="contests"),
     path('details/', UsersDetail.as_view(), name="details"),
- 	path('details/questions', QuestionsDetail.as_view(), name="questions"),
-    path('details/contests', ContestsDetail.as_view(), name="contests"),
-       
+ 	path('details/questions/', QuestionsDetail.as_view(), name="questions"),
+    path('details/contests/', ContestsDetail.as_view(), name="contests"),
+    path('announcements/', AnnouncementsDetail.as_view(), name="announcements"),
+    path('upcoming-contest/', UpcomingContestDetail.as_view(), name="upcoming-contest")
 ]

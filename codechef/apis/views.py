@@ -103,7 +103,7 @@ class QuestionsDetail(APIView):
         details = {}
 
         a = -10
-        script = str(soup.find_all("script")[a])
+        script = str(soup.find_all("script"))
 
         questions = re.findall(r"y:\d+", script)
 
@@ -143,7 +143,7 @@ class ContestsDetail(APIView):
         details = {}
         
         a = -10
-        script = str(soup.find_all("script")[a])
+        script = str(soup.find_all("script"))
 
         contests = re.findall(r"{.+[:,].+}|\[.+[,:].+\]", script)[-1]
 
@@ -152,6 +152,64 @@ class ContestsDetail(APIView):
 
         return Response(details)
 
+
+class AnnouncementsDetail(APIView):
+    """
+    View to list all contests in the system.
+    """
+
+    def get(self, request, format=None):
+        """
+        Return a list of cannouncements.
+        """
+        url = "https://www.codechef.com/"
+        
+        html_content = requests.get(url).text
+        
+        soup = BeautifulSoup(html_content, "lxml")
+        
+        announcements = soup.find_all("div", attrs={"class": "widget"})[3]
+        announcements = announcements.find("ul", attrs={"class": "announcements"}).find_all("li")
+        
+        obj = {} 
+        obj["announcements"] = []
+        
+        for i in announcements:
+            data = {}
+
+            urls = i.find("a")
+            data["content"] = i.text.strip("\n")
+            data["url"] = urls["href"]
+            data["url_text"] = urls.text
+            obj["announcements"].append(data)
+
+
+        return Response(obj)
+
+
+class UpcomingContestDetail(APIView):
+    """
+    View to list all contests in the system.
+    """
+
+    def get(self, request, format=None):
+        """
+        Return upcoming contest.
+        """
+        url = "https://www.codechef.com/"
+
+        html_content = requests.get(url).text
+
+        soup = BeautifulSoup(html_content, "lxml")
+
+        upcoming_contest = soup.find("div", attrs={"id": "upcoming-timer"}).find("a")
+
+        details = {}
+
+        details["url"] = upcoming_contest["href"]
+        details["contest"] = upcoming_contest.text
+
+        return Response(details)
 
 
 
