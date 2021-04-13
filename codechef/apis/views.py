@@ -4,6 +4,7 @@ from rest_framework.response import Response
 from rest_framework import authentication, permissions
 from .serializers import ContestsSerializer
 from bs4 import BeautifulSoup
+from .decorators import user_exists
 import requests
 import json
 import re
@@ -39,11 +40,13 @@ class ListContests(APIView):
         contests = serializers
         return Response(contests)
 
+
 class UsersDetail(APIView):
     """
     View to list all contests in the system.
     """
 
+    @user_exists
     def get(self, request, format=None):
         """
         Return detail of the users.
@@ -85,11 +88,13 @@ class UsersDetail(APIView):
 
         return Response(details)
 
+
 class QuestionsDetail(APIView):
     """
     View to list all contests in the system.
     """
 
+    @user_exists
     def get(self, request, format=None):
         """
         Return a list of questions solved by users.
@@ -129,6 +134,7 @@ class ContestsDetail(APIView):
     View to list all contests in the system.
     """
 
+    @user_exists
     def get(self, request, format=None):
         """
         Return a list of contests given by users.
@@ -153,6 +159,11 @@ class ContestsDetail(APIView):
             if "code" in str(i) and "getyear" in str(i):
                 string = str(i)
 
+        if(len(string.strip()) == 0):
+            obj = {
+                "detail": "No Contest Given Yet"
+            }
+            return Response(obj)
         data = json.loads(string)
         details["data"] = data
         return Response(details)
