@@ -8,4 +8,6 @@ app_name = "apis"
 
 urlpatterns = [
     path('contests/', ListContests.as_view(), name="contests"),
+    #freinds rating
+    #detail graph
 ]
