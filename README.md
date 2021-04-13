@@ -1,3 +1,3 @@
-# codechef-app
+# Codechef Apis
 
 [Link](https://codechef-api.herokuapp.com/)
