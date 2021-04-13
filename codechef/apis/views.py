@@ -47,7 +47,7 @@ class UsersDetail(APIView):
     def get(self, request, format=None):
         """
         Return detail of the users.
-        /?username=jhabarsingh
+        GET: /?username=jhabarsingh
         """
         username = request.GET.get("username", "jhabarsingh")
         url = "https://www.codechef.com/users/" + username
@@ -76,9 +76,12 @@ class UsersDetail(APIView):
                 continue
             elif(i == 8):
                 break
-            label = data[i].find("label").text
-            span = data[i].find("span").text
-            details[label] = span
+            try:
+                label = data[i].find("label").text
+                span = data[i].find("span").text
+                details[label] = span   
+            except:
+                pass
 
         return Response(details)
 
