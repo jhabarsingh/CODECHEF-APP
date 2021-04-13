@@ -1,1 +1,1 @@
-web: gunicorn codechef.wsgi --log-file -
+web: gunicorn codechef/codechef.wsgi --log-file -
