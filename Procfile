@@ -1,1 +1,1 @@
-web: gunicorn --pythonpath codeforces codeforces.wsgi
+web: gunicorn --pythonpath codechef codechef.wsgi
