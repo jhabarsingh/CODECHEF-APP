@@ -57,7 +57,7 @@ class UsersDetail(APIView):
         
         html_content = requests.get(url).text
         soup = BeautifulSoup(html_content, "lxml")
-        print(check_user(username, soup.title))
+        
         if not check_user(username, soup.title):
             obj = {
                 "details": "Username Does't exist"
@@ -110,6 +110,12 @@ class QuestionsDetail(APIView):
         html_content = requests.get(url).text
         soup = BeautifulSoup(html_content, "lxml")
 
+        if not check_user(username, soup.title):
+            obj = {
+                "details": "Username Does't exist"
+            }
+            return Response(obj)
+
         details = {}
 
         script = str(soup.find_all("script"))
@@ -148,6 +154,12 @@ class ContestsDetail(APIView):
         
         html_content = requests.get(url).text
         soup = BeautifulSoup(html_content, "lxml")
+
+        if not check_user(username, soup.title):
+            obj = {
+                "details": "Username Does't exist"
+            }
+            return Response(obj)
 
         details = {}
         
