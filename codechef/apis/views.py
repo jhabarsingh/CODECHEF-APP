@@ -5,6 +5,7 @@ from rest_framework import authentication, permissions
 from .serializers import ContestsSerializer
 from bs4 import BeautifulSoup
 from .decorators import user_exists
+from .utilities import check_user
 import requests
 import json
 import re
@@ -46,7 +47,6 @@ class UsersDetail(APIView):
     View to list all contests in the system.
     """
 
-    @user_exists
     def get(self, request, format=None):
         """
         Return detail of the users.
@@ -57,7 +57,13 @@ class UsersDetail(APIView):
         
         html_content = requests.get(url).text
         soup = BeautifulSoup(html_content, "lxml")
-        
+        print(check_user(username, soup.title))
+        if not check_user(username, soup.title):
+            obj = {
+                "details": "Username Does't exist"
+            }
+            return Response(obj)
+
         rating = soup.find("div", attrs={"class": "rating-header"})
         rating_number = rating.find("div", attrs={"class": "rating-number"}).text
         highest_rating = rating.find("small").text[1:-1]
@@ -94,7 +100,6 @@ class QuestionsDetail(APIView):
     View to list all contests in the system.
     """
 
-    @user_exists
     def get(self, request, format=None):
         """
         Return a list of questions solved by users.
@@ -134,7 +139,6 @@ class ContestsDetail(APIView):
     View to list all contests in the system.
     """
 
-    @user_exists
     def get(self, request, format=None):
         """
         Return a list of contests given by users.
