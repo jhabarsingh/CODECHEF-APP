@@ -40,11 +40,19 @@ for i in range(len(data)):
 	span = data[i].find("span").text
 	details[label] = span	
 
-script = str(soup.find_all("script"))
+script = soup.find_all("script")
 
-contests = re.findall(r'\{"code:\w*}', script)
+string = ""
+for i in script:
+	if "code" in str(i) and "getyear" in str(i):
+		string = str(i)
 
-print(contests)
+contests = re.findall(r"{.+[:,].+}|\[.+[,:].+\]", string)
 
 
+for i in contests:
+	if "code" in str(i) and "getyear" in str(i):
+		string = str(i)
 
+string = string.replace("\\", " ")
+print(string)

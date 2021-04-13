@@ -102,7 +102,6 @@ class QuestionsDetail(APIView):
 
         details = {}
 
-        a = -10
         script = str(soup.find_all("script"))
 
         questions = re.findall(r"y:\d+", script)
@@ -142,14 +141,20 @@ class ContestsDetail(APIView):
 
         details = {}
         
-        a = -10
-        script = str(soup.find_all("script"))
+        script = soup.find_all("script")
+        
+        string = ""
+        for i in script:
+            if "code" in str(i) and "getyear" in str(i):
+                string = str(i)
+        
+        contests = re.findall(r"{.+[:,].+}|\[.+[,:].+\]", string)
+        for i in contests:
+            if "code" in str(i) and "getyear" in str(i):
+                string = str(i)
 
-        contests = re.findall(r"{.+[:,].+}|\[.+[,:].+\]", script)[-1]
-
-        contests = json.loads(contests)
-        details["contests"] = contests
-
+        data = json.loads(string)
+        details["data"] = data
         return Response(details)
 
 
