@@ -64,6 +64,10 @@ class UsersDetail(APIView):
             }
             return Response(obj)
 
+        userimage = soup.find("div", attrs={"class" : "user-details-container"})
+        print(userimage)
+        userimage = userimage.find("header")
+        userimage = userimage.find("img")    
         rating = soup.find("div", attrs={"class": "rating-header"})
         rating_number = rating.find("div", attrs={"class": "rating-number"}).text
         highest_rating = rating.find("small").text[1:-1]
@@ -75,6 +79,11 @@ class UsersDetail(APIView):
         data = user_details.find_all("li")
 
         details = {}
+        try:
+            userimage = userimage["src"]
+            details["profile_pic"] = "https://www.codechef.com/" + userimage
+        except:
+            pass 
         details["name"] = name
         details["rating"] = rating_number
         details["stars"] = stars
