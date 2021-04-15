@@ -24,19 +24,26 @@ class ListContests(APIView):
         soup = BeautifulSoup(html_content, "lxml")
 
         contests = soup.find("div", attrs={"id": "contests"})
-
+        images = soup.find_all("span", attrs={"class": "contest_title"})
+        counter = 0
         serializers = []
         for i in contests.find_all("div", attrs={"class": "running"}):
-        	data = i.find("a", attrs={"class": "data-ace"})
-        	data = data["data-ace"]
-        	data = json.loads(data)
-        	obj = {}
-        	obj["event"] = data["title"]
-        	obj["url"] = data["desc"][5:]
-        	obj["organization"] = data["location"]
-        	obj["start_time"] = data["time"]["start"]
-        	obj["end_time"] = data["time"]["end"]
-        	serializers.append(obj)
+            data = i.find("a", attrs={"class": "data-ace"})
+            data = data["data-ace"]
+            data = json.loads(data)
+            obj = {}
+            obj["event"] = data["title"]
+            obj["url"] = data["desc"][5:]
+            try:
+                obj["image"] = url + images[counter].find("img")["src"]
+            except:
+                pass
+
+            obj["organization"] = data["location"]
+            obj["start_time"] = data["time"]["start"]
+            obj["end_time"] = data["time"]["end"]
+            serializers.append(obj)
+            counter += 1
 
         contests = serializers
         return Response(contests)
