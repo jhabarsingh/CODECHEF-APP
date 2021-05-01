@@ -6,6 +6,8 @@ import { createStackNavigator } from "@react-navigation/stack";
 import Home from "../screens/Home";
 import About from "../screens/About";
 import Contact from "../screens/Contact";
+import Upcoming from '../screens/Upcoming';
+import ReportBug from '../screens/ReportBug';
 
 const Stack = createStackNavigator();
 
@@ -41,4 +43,27 @@ const AboutStackNavigator = () => {
   );
 }
 
-export { MainStackNavigator, ContactStackNavigator, AboutStackNavigator };
+const UpcomingStackNavigator = () => {
+  return (
+    <Stack.Navigator screenOptions={screenOptionStyle}>
+      <Stack.Screen name="Upcoming" component={Upcoming} />
+    </Stack.Navigator>
+  );
+}
+
+const ReportBugStackNavigator = () => {
+  return (
+    <Stack.Navigator screenOptions={screenOptionStyle}>
+      <Stack.Screen name="ReportBug" component={ReportBug} />
+    </Stack.Navigator>
+  );
+}
+
+
+export { 
+  MainStackNavigator, 
+  ContactStackNavigator, 
+  AboutStackNavigator, 
+  UpcomingStackNavigator,
+  ReportBugStackNavigator
+};
