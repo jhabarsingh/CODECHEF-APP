@@ -1,23 +1,64 @@
-// ./screens/About.js
+import React from 'react';
 
-import React from "react";
-import { View, StyleSheet, Text } from "react-native";
+import { 
+  SafeAreaView, 
+  View, 
+  Linking, 
+  FlatList, 
+  StyleSheet, 
+  Text, 
+  StatusBar, 
+  ListItem, 
+  Avatar
+} from 'react-native';
 
-const About = () => {
-  return (
-    <View style={styles.center}>
-      <Text>This is the about screen</Text>
-    </View>
-  );
-};
+import { useState, useEffect } from 'react';
+import AnnouncementRow from './AnnouncementRow.js';
 
 const styles = StyleSheet.create({
-  center: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    textAlign: "center",
-  },
+    container: {
+        flex: 1,
+    },
 });
 
-export default About;
+
+const CustomListview = ({ itemList }) => {
+      return (
+        <SafeAreaView style={styles.container}>
+          <FlatList
+              data={itemList}
+              keyExtractor={item => item.event}
+              renderItem={({ item }) => <AnnouncementRow
+                  content={item.content}
+                  text={item.url_text}
+                  url={item.url}
+              />}
+          />
+      </SafeAreaView>
+      )
+};
+
+const Contact = () => {
+  const [announcements, setAnnouncements] = useState([]);
+
+  useEffect(() => {
+    fetch(`https://codechef-api.herokuapp.com/announcements/`)
+    .then((response) => {
+    return response.json()
+    })
+    .then((data) => {
+      setAnnouncements(data.announcements);
+      console.log(announcements);
+    })
+  }, []);
+
+
+  return (
+    <View style={styles.container}>
+      <CustomListview
+        itemList={announcements}
+      />
+    </View>
+  );
+}
+export default Contact;
