@@ -1,6 +1,7 @@
 import React, {Component} from 'react';  
 import {Platform, StyleSheet, Text, View, Button, Linking} from 'react-native';  
-  
+import { Card, Icon} from 'react-native-elements'
+
 const instructions = Platform.select({  
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',  
   android:  
@@ -12,17 +13,33 @@ type Props = {};
 export default class App extends Component<Props> {  
   render() {  
     return (  
-      <View style={styles.container}>  
-        <Text style={styles.welcome}>Report Bug !</Text>  
-        <Text style={styles.instructions}>It is an open source project available on github </Text>
-        <Text style={styles.instructions1}>If you find any bug you can create an issue in it's github Repository</Text>  
-        <Button
-            title="Github Link"
-            onPress={() => Linking.openURL("https://github.com/jhabarsingh/CODECHEF-APP")}
-        >
-        </Button>  
-      </View>  
-    );  
+      <Card>
+  <Card.Title style={{fontSize: 20, fontWeight: 'bold'}} >Report Bug !</Card.Title>
+  <Card.Divider/>
+  <Card.Image source={require('../assets/bugs.png')}>
+  </Card.Image>
+  <Card.Divider />
+
+  <View>
+    <Text
+      style={{marginBottom: 10, color: 'black', fontSize: 12, fontWeight: 'bold'}}>
+        It is an open source project available on github 
+      </Text>
+
+      <Text
+      style={{marginBottom: 10, color: 'black', fontSize: 12, fontWeight: 'bold'}}>
+        If you find any bug you can create an issue in it's github Repository 
+      </Text>
+
+      <Button
+        icon={<Icon name='code' color='#ffffff' />}
+        buttonStyle={{borderRadius: 0, marginLeft: 0, marginRight: 0, marginBottom: 0}}
+        onPress={() => Linking.openURL("https://github.com/jhabarsingh/CODECHEF-APP")}
+        title='Github Link' />
+  </View>
+</Card>
+
+);  
   }  
 }  
   
