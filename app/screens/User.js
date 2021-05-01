@@ -14,7 +14,7 @@ const User = () => {
     useEffect(() => {
         fetch(`https://codechef-api.herokuapp.com/user/?username=jhabarsingh`)
         .then((response) => {
-        return response.json()
+            return response.json()
         })
         .then((datas) => {
             setData(datas);

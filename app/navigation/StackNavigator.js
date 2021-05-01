@@ -63,7 +63,7 @@ const ReportBugStackNavigator = () => {
 const UserStackNavigator = () => {
   return (
     <Stack.Navigator screenOptions={screenOptionStyle}>
-      <Stack.Screen name="ReportBug" component={User} />
+      <Stack.Screen name="User" component={User} />
     </Stack.Navigator>
   );
 }
