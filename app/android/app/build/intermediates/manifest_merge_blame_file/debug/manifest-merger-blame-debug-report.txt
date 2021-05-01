@@ -1,0 +1,136 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.app"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+9        android:targetSdkVersion="30" />
+10
+11    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+11-->/home/jhabarsingh/projects/codechef/app/android/app/src/main/AndroidManifest.xml:5:3-75
+11-->/home/jhabarsingh/projects/codechef/app/android/app/src/main/AndroidManifest.xml:5:20-73
+12    <uses-permission android:name="android.permission.INTERNET" />
+12-->/home/jhabarsingh/projects/codechef/app/android/app/src/main/AndroidManifest.xml:3:3-64
+12-->/home/jhabarsingh/projects/codechef/app/android/app/src/main/AndroidManifest.xml:3:20-62
+13    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+13-->/home/jhabarsingh/projects/codechef/app/android/app/src/main/AndroidManifest.xml:6:3-72
+13-->/home/jhabarsingh/projects/codechef/app/android/app/src/main/AndroidManifest.xml:6:20-70
+14    <uses-permission android:name="android.permission.VIBRATE" />
+14-->/home/jhabarsingh/projects/codechef/app/android/app/src/main/AndroidManifest.xml:7:3-63
+14-->/home/jhabarsingh/projects/codechef/app/android/app/src/main/AndroidManifest.xml:7:20-61
+15    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" /> <!-- These require runtime permissions on M -->
+15-->/home/jhabarsingh/projects/codechef/app/android/app/src/main/AndroidManifest.xml:8:3-77
+15-->/home/jhabarsingh/projects/codechef/app/android/app/src/main/AndroidManifest.xml:8:20-75
+16    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+16-->/home/jhabarsingh/projects/codechef/app/android/app/src/main/AndroidManifest.xml:10:3-77
+16-->/home/jhabarsingh/projects/codechef/app/android/app/src/main/AndroidManifest.xml:10:20-75
+17    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+17-->/home/jhabarsingh/projects/codechef/app/android/app/src/main/AndroidManifest.xml:11:3-78
+17-->/home/jhabarsingh/projects/codechef/app/android/app/src/main/AndroidManifest.xml:11:20-76
+18    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+18-->[com.facebook.flipper:flipper:0.54.0] /home/jhabarsingh/.gradle/caches/transforms-3/7ced98fae9ea2b5aa64e54aefef0d400/transformed/jetified-flipper-0.54.0/AndroidManifest.xml:16:5-76
+18-->[com.facebook.flipper:flipper:0.54.0] /home/jhabarsingh/.gradle/caches/transforms-3/7ced98fae9ea2b5aa64e54aefef0d400/transformed/jetified-flipper-0.54.0/AndroidManifest.xml:16:22-73
+19    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+19-->[:expo-updates] /home/jhabarsingh/projects/codechef/app/node_modules/expo-updates/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:11:5-79
+19-->[:expo-updates] /home/jhabarsingh/projects/codechef/app/node_modules/expo-updates/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:11:22-76
+20    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
+20-->[com.android.installreferrer:installreferrer:1.0] /home/jhabarsingh/.gradle/caches/transforms-3/b2e3b9cc19fd21cadd47d49b8575755b/transformed/jetified-installreferrer-1.0/AndroidManifest.xml:9:5-110
+20-->[com.android.installreferrer:installreferrer:1.0] /home/jhabarsingh/.gradle/caches/transforms-3/b2e3b9cc19fd21cadd47d49b8575755b/transformed/jetified-installreferrer-1.0/AndroidManifest.xml:9:22-107
+21
+22    <application
+22-->/home/jhabarsingh/projects/codechef/app/android/app/src/main/AndroidManifest.xml:13:3-37:17
+23        android:name="com.app.MainApplication"
+23-->/home/jhabarsingh/projects/codechef/app/android/app/src/main/AndroidManifest.xml:14:5-36
+24        android:allowBackup="false"
+24-->/home/jhabarsingh/projects/codechef/app/android/app/src/main/AndroidManifest.xml:18:5-32
+25        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+25-->[androidx.core:core:1.3.0] /home/jhabarsingh/.gradle/caches/transforms-3/fe3cf0882eb40046447bd9893532f7c5/transformed/core-1.3.0/AndroidManifest.xml:24:18-86
+26        android:debuggable="true"
+27        android:icon="@mipmap/ic_launcher"
+27-->/home/jhabarsingh/projects/codechef/app/android/app/src/main/AndroidManifest.xml:16:5-39
+28        android:label="@string/app_name"
+28-->/home/jhabarsingh/projects/codechef/app/android/app/src/main/AndroidManifest.xml:15:5-37
+29        android:roundIcon="@mipmap/ic_launcher_round"
+29-->/home/jhabarsingh/projects/codechef/app/android/app/src/main/AndroidManifest.xml:17:5-50
+30        android:theme="@style/AppTheme"
+30-->/home/jhabarsingh/projects/codechef/app/android/app/src/main/AndroidManifest.xml:19:5-36
+31        android:usesCleartextTraffic="true" >
+31-->/home/jhabarsingh/projects/codechef/app/android/app/src/debug/AndroidManifest.xml:6:18-53
+32        <meta-data
+32-->/home/jhabarsingh/projects/codechef/app/android/app/src/main/AndroidManifest.xml:21:5-103
+33            android:name="expo.modules.updates.EXPO_UPDATE_URL"
+33-->/home/jhabarsingh/projects/codechef/app/android/app/src/main/AndroidManifest.xml:21:16-67
+34            android:value="YOUR-APP-URL-HERE" />
+34-->/home/jhabarsingh/projects/codechef/app/android/app/src/main/AndroidManifest.xml:21:68-101
+35        <meta-data
+35-->/home/jhabarsingh/projects/codechef/app/android/app/src/main/AndroidManifest.xml:22:5-112
+36            android:name="expo.modules.updates.EXPO_SDK_VERSION"
+36-->/home/jhabarsingh/projects/codechef/app/android/app/src/main/AndroidManifest.xml:22:16-68
+37            android:value="YOUR-APP-SDK-VERSION-HERE" />
+37-->/home/jhabarsingh/projects/codechef/app/android/app/src/main/AndroidManifest.xml:22:69-110
+38
+39        <activity
+39-->/home/jhabarsingh/projects/codechef/app/android/app/src/main/AndroidManifest.xml:23:5-35:16
+40            android:name="com.app.MainActivity"
+40-->/home/jhabarsingh/projects/codechef/app/android/app/src/main/AndroidManifest.xml:24:7-35
+41            android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode"
+41-->/home/jhabarsingh/projects/codechef/app/android/app/src/main/AndroidManifest.xml:26:7-84
+42            android:label="@string/app_name"
+42-->/home/jhabarsingh/projects/codechef/app/android/app/src/main/AndroidManifest.xml:25:7-39
+43            android:launchMode="singleTask"
+43-->/home/jhabarsingh/projects/codechef/app/android/app/src/main/AndroidManifest.xml:27:7-38
+44            android:theme="@style/Theme.App.SplashScreen"
+44-->/home/jhabarsingh/projects/codechef/app/android/app/src/main/AndroidManifest.xml:29:7-52
+45            android:windowSoftInputMode="adjustResize" >
+45-->/home/jhabarsingh/projects/codechef/app/android/app/src/main/AndroidManifest.xml:28:7-49
+46            <intent-filter>
+46-->/home/jhabarsingh/projects/codechef/app/android/app/src/main/AndroidManifest.xml:31:7-34:23
+47                <action android:name="android.intent.action.MAIN" />
+47-->/home/jhabarsingh/projects/codechef/app/android/app/src/main/AndroidManifest.xml:32:9-60
+47-->/home/jhabarsingh/projects/codechef/app/android/app/src/main/AndroidManifest.xml:32:17-58
+48
+49                <category android:name="android.intent.category.LAUNCHER" />
+49-->/home/jhabarsingh/projects/codechef/app/android/app/src/main/AndroidManifest.xml:33:9-68
+49-->/home/jhabarsingh/projects/codechef/app/android/app/src/main/AndroidManifest.xml:33:19-66
+50            </intent-filter>
+51        </activity>
+52        <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
+52-->/home/jhabarsingh/projects/codechef/app/android/app/src/main/AndroidManifest.xml:36:5-81
+52-->/home/jhabarsingh/projects/codechef/app/android/app/src/main/AndroidManifest.xml:36:15-79
+53
+54        <meta-data
+54-->[:unimodules-react-native-adapter] /home/jhabarsingh/projects/codechef/app/node_modules/@unimodules/react-native-adapter/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:12:9-14:91
+55            android:name="org.unimodules.core.AppLoader#react-native-headless"
+55-->[:unimodules-react-native-adapter] /home/jhabarsingh/projects/codechef/app/node_modules/@unimodules/react-native-adapter/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:13:13-79
+56            android:value="org.unimodules.adapters.react.apploader.RNHeadlessAppLoader" />
+56-->[:unimodules-react-native-adapter] /home/jhabarsingh/projects/codechef/app/node_modules/@unimodules/react-native-adapter/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:14:13-88
+57
+58        <provider
+58-->[:expo-file-system] /home/jhabarsingh/projects/codechef/app/node_modules/expo-file-system/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:17:9-26:20
+59            android:name="expo.modules.filesystem.FileSystemFileProvider"
+59-->[:expo-file-system] /home/jhabarsingh/projects/codechef/app/node_modules/expo-file-system/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:18:13-74
+60            android:authorities="com.app.FileSystemFileProvider"
+60-->[:expo-file-system] /home/jhabarsingh/projects/codechef/app/node_modules/expo-file-system/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:19:13-74
+61            android:exported="false"
+61-->[:expo-file-system] /home/jhabarsingh/projects/codechef/app/node_modules/expo-file-system/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:20:13-37
+62            android:grantUriPermissions="true" >
+62-->[:expo-file-system] /home/jhabarsingh/projects/codechef/app/node_modules/expo-file-system/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:21:13-47
+63            <meta-data
+63-->[:expo-file-system] /home/jhabarsingh/projects/codechef/app/node_modules/expo-file-system/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:23:13-25:70
+64                android:name="android.support.FILE_PROVIDER_PATHS"
+64-->[:expo-file-system] /home/jhabarsingh/projects/codechef/app/node_modules/expo-file-system/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:24:17-67
+65                android:resource="@xml/file_system_provider_paths" />
+65-->[:expo-file-system] /home/jhabarsingh/projects/codechef/app/node_modules/expo-file-system/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:25:17-67
+66        </provider>
+67
+68        <service
+68-->[androidx.room:room-runtime:2.1.0] /home/jhabarsingh/.gradle/caches/transforms-3/3b5db4b3b22ae452a34a6490900f58b2/transformed/room-runtime-2.1.0/AndroidManifest.xml:25:9-27:40
+69            android:name="androidx.room.MultiInstanceInvalidationService"
+69-->[androidx.room:room-runtime:2.1.0] /home/jhabarsingh/.gradle/caches/transforms-3/3b5db4b3b22ae452a34a6490900f58b2/transformed/room-runtime-2.1.0/AndroidManifest.xml:26:13-74
+70            android:exported="false" />
+70-->[androidx.room:room-runtime:2.1.0] /home/jhabarsingh/.gradle/caches/transforms-3/3b5db4b3b22ae452a34a6490900f58b2/transformed/room-runtime-2.1.0/AndroidManifest.xml:27:13-37
+71    </application>
+72
+73</manifest>
