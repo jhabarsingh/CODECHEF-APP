@@ -27,7 +27,7 @@ const CustomListview = ({ itemList }) => {
         <SafeAreaView style={styles.container}>
           <FlatList
               data={itemList}
-              keyExtractor={item => item.event}
+              keyExtractor={item => item.content.toString()}
               renderItem={({ item }) => <AnnouncementRow
                   content={item.content}
                   text={item.url_text}
