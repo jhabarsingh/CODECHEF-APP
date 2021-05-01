@@ -8,6 +8,7 @@ import About from "../screens/About";
 import Contact from "../screens/Contact";
 import Upcoming from '../screens/Upcoming';
 import ReportBug from '../screens/ReportBug';
+import User from '../screens/User'
 
 const Stack = createStackNavigator();
 
@@ -59,11 +60,20 @@ const ReportBugStackNavigator = () => {
   );
 }
 
+const UserStackNavigator = () => {
+  return (
+    <Stack.Navigator screenOptions={screenOptionStyle}>
+      <Stack.Screen name="ReportBug" component={User} />
+    </Stack.Navigator>
+  );
+}
+
 
 export { 
   MainStackNavigator, 
   ContactStackNavigator, 
   AboutStackNavigator, 
   UpcomingStackNavigator,
-  ReportBugStackNavigator
+  ReportBugStackNavigator,
+  UserStackNavigator
 };

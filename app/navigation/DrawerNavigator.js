@@ -9,7 +9,8 @@ import {
   ContactStackNavigator, 
   AboutStackNavigator, 
   UpcomingStackNavigator,
-  ReportBugStackNavigator
+  ReportBugStackNavigator,
+  UserStackNavigator
 } from "./StackNavigator";
 
 // import TabNavigator from "./TabNavigator";
@@ -24,6 +25,7 @@ const DrawerNavigator = () => {
       <Drawer.Screen name="About" component={AboutStackNavigator} />
       <Drawer.Screen name="Upcoming Contests" component={UpcomingStackNavigator} />
       <Drawer.Screen name="Report Bug" component={ReportBugStackNavigator} />
+      <Drawer.Screen name="User" component={UserStackNavigator} />
     </Drawer.Navigator>
   );
 }

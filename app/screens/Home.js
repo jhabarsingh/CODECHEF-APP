@@ -20,7 +20,7 @@ class Inputs extends Component {
      })
      .then((data) => {
        if("details" in data) {
-         console.log("User doesn't exist")
+         alert("User doesn't exist")
        }
        else {
         this.data = data;
@@ -46,7 +46,7 @@ class Inputs extends Component {
                onPress = {
                   () => this.save(this.state.profile)
                }>
-               <Text style = {styles.submitButtonText}> Submit </Text>
+               <Text style = {styles.submitButtonText}> Search </Text>
             </TouchableOpacity>
          </View>
       )
