@@ -19,7 +19,8 @@ const styles = StyleSheet.create({
         color: '#000',
         marginBottom: 10,
         padding: 5,
-        textAlign: 'center'
+        textAlign: 'center',
+        fontStyle: 'italic'
     },
     container_text: {
         flex: 1,
@@ -51,7 +52,7 @@ const styles = StyleSheet.create({
     },
       buttonText: {
         fontSize: 16,
-        color: 'black',
+        color: 'white',
       }
 });
 
