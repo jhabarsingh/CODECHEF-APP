@@ -1,58 +1,65 @@
 import React from 'react';
-import { SafeAreaView, View, FlatList, StyleSheet, Text, StatusBar } from 'react-native';
 
-const DATA = [
-  {
-    id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
-    title: 'First Item',
-  },
-  {
-    id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
-    title: 'Second Item',
-  },
-  {
-    id: '58694a0f-3da1-471f-bd96-145571e29d72',
-    title: 'Third Item',
-  },
-  
-];
+import { 
+  SafeAreaView, 
+  View, 
+  Linking, 
+  FlatList, 
+  StyleSheet, 
+  Text, 
+  StatusBar, 
+  ListItem, 
+  Avatar
+} from 'react-native';
 
-const Item = ({ title }) => (
-  <View style={styles.item}>
-    <Text style={styles.title}>{title}</Text>
-  </View>
-);
-
-const App = () => {
-  const renderItem = ({ item }) => (
-    <Item title={item.title} />
-  );
-
-  return (
-    <SafeAreaView style={styles.container}>
-      <FlatList
-        data={DATA}
-        renderItem={renderItem}
-        keyExtractor={item => item.id}
-      />
-    </SafeAreaView>
-  );
-}
+import { useState, useEffect } from 'react';
+import CustomRow from './CustomRow.js';
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    marginTop: StatusBar.currentHeight || 0,
-  },
-  item: {
-    backgroundColor: '#f9c2ff',
-    padding: 20,
-    marginVertical: 8,
-    marginHorizontal: 16,
-  },
-  title: {
-    fontSize: 32,
-  },
+    container: {
+        flex: 1,
+    },
 });
 
-export default App;
+
+const CustomListview = ({ itemList }) => {
+      return (
+        <SafeAreaView style={styles.container}>
+          <FlatList
+              data={itemList}
+              keyExtractor={item => item.event}
+              renderItem={({ item }) => <CustomRow
+                  title={item.event}
+                  description={`${item.start_time} - ${item.end_time}`}
+                  image_url={item.image}
+                  url={item.url}
+              />}
+          />
+      </SafeAreaView>
+      )
+};
+
+const Contact = () => {
+  const [contests, setContests] = useState([]);
+
+  useEffect(() => {
+    fetch(`https://codechef-api.herokuapp.com/contests/`)
+    .then((response) => {
+    return response.json()
+    })
+    .then((data) => {
+      setContests(data);
+      console.log(contests);
+    })
+  }, []);
+
+
+  return (
+    <View style={styles.container}>
+      <CustomListview
+        itemList={contests}
+      />
+    </View>
+  );
+}
+export default Contact;
