@@ -20,24 +20,6 @@ const User = () => {
             setData(datas);
             console.log(datas);
         })
-
-        fetch(`https://codechef-api.herokuapp.com/user/contests/?username=jhabarsingh`)
-        .then((response) => {
-        return response.json()
-        })
-        .then((datas) => {
-            setContests(datas);
-            console.log(datas);
-        })
-
-        fetch(`https://codechef-api.herokuapp.com/user/questions/?username=jhabarsingh`)
-        .then((response) => {
-        return response.json()
-        })
-        .then((datas) => {
-            setQuestions(datas);
-            console.log(datas);
-        })
     }, []);
 
     return (

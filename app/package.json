@@ -25,12 +25,14 @@
     "react-native-chart-kit": "^6.11.0",
     "react-native-elements": "^3.4.1",
     "react-native-gesture-handler": "^1.10.3",
+    "react-native-icons": "^0.7.1",
     "react-native-reanimated": "^2.1.0",
     "react-native-responsive-linechart": "^5.7.1",
     "react-native-safe-area-context": "^3.2.0",
     "react-native-screens": "^3.0.0",
     "react-native-svg": "^12.1.1",
     "react-native-unimodules": "~0.13.3",
+    "react-native-vector-icons": "^8.1.0",
     "react-native-web": "~0.13.12"
   },
   "devDependencies": {
