@@ -74,6 +74,7 @@ sudo docker-compose up
 
 ## [React Native Expo Setup](https://dev.to/runosaduwa/how-to-install-react-native-with-expo-quick-easy-4j8j)
 
+[Install node](https://www.geeksforgeeks.org/installation-of-node-js-on-linux/) | [Install React Native](https://code.likeagirl.io/say-hello-world-using-react-native-in-linux-15955986bc44)
 ```
 git clone https://github.com/jhabarsingh/CODECHEF-APP.git
 cd CODECHEF-APP/app
