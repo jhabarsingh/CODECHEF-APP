@@ -16,9 +16,6 @@
 </div>
 </details>
 
-## Django Apis
-
-![Django Apis](https://github.com/jhabarsingh/CODECHEF-APP/blob/main/app/assets/apis.png?raw=true)
 
 ## About
   [CODECHEF-APP]() is a Native Mobile app built using Django and React Native. It provides many functionalities:-
@@ -28,6 +25,9 @@
   4. Notifies about all the contests List (codechef as well as by other online JUDGES)
   5. Notifies codechef Upcoming contests
   
+## Django Api End Points
+![Django Apis](https://github.com/jhabarsingh/CODECHEF-APP/blob/main/app/assets/apis.png?raw=true)
+
 
 ## Django Backend Setup
 
