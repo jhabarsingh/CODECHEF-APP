@@ -14,30 +14,31 @@ export default class App extends Component<Props> {
   render() {  
     return (  
       <Card>
-  <Card.Title style={{fontSize: 20, fontWeight: 'bold'}} >Report Bug !</Card.Title>
-  <Card.Divider/>
-  <Card.Image source={require('../assets/bugs.png')}>
-  </Card.Image>
-  <Card.Divider />
+        <Card.Title style={{fontSize: 20, fontWeight: 'bold'}} >Report Bug !</Card.Title>
+        <Card.Divider/>
+        <Card.Image source={require('../assets/bugs.png')}>
+        </Card.Image>
+        <Card.Divider />
 
-  <View>
-    <Text
-      style={{marginBottom: 10, color: 'black', fontSize: 12, fontWeight: 'bold'}}>
-        It is an open source project available on github 
-      </Text>
+        <View>
+          <Text
+            style={{marginBottom: 10, color: 'black', fontSize: 12, fontWeight: 'bold'}}>
+              It is an open source project available on github 
+            </Text>
 
-      <Text
-      style={{marginBottom: 10, color: 'black', fontSize: 12, fontWeight: 'bold'}}>
-        If you find any bug you can create an issue in it's github Repository 
-      </Text>
+            <Text
+            style={{marginBottom: 10}}>
+              If you find any bug you can create an issue in it's github Repository 
+            </Text>
 
-      <Button
-        icon={<Icon name='code' color='#ffffff' />}
-        buttonStyle={{borderRadius: 0, marginLeft: 0, marginRight: 0, marginBottom: 0}}
-        onPress={() => Linking.openURL("https://github.com/jhabarsingh/CODECHEF-APP")}
-        title='Github Link' />
-  </View>
-</Card>
+            <Button
+              icon={<Icon name='code' color='#ffffff' />}
+              buttonStyle={{borderRadius: 0, marginLeft: 0, marginRight: 0, marginBottom: 0}}
+              onPress={() => Linking.openURL("https://github.com/jhabarsingh/CODECHEF-APP")}
+              title='Github Link' 
+            />
+        </View>
+      </Card>
 
 );  
   }  
