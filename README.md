@@ -67,7 +67,7 @@ sudo docker-compose up
 <p align="center" >
   
   [![Watch the video](https://github.com/jhabarsingh/CODECHEF-APP/blob/main/app/assets/thumbnail.jpg?raw=true)](https://www.youtube.com/watch?v=IRgjNln4s20)
-  <i align="center">Click On The Video To Watch Demo</i>
+  <i><b align="center">Click On The Above Image To Watch Demo</b></i>
 
 </p>
 
