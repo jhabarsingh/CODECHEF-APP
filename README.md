@@ -19,11 +19,11 @@
 
 ## About
   [CODECHEF-APP]() is a Native Mobile app built using Django and React Native. It provides many functionalities:-
-  1. Track your Progress on Codechef
-  2. Track your Friends Progress on codechef
-  3. Notifies about the Latest Announcements on codechef
-  4. Notifies about all the contests List (codechef as well as by other online JUDGES)
-  5. Notifies codechef Upcoming contests
+  1. Track your **Progress** on **Codechef**
+  2. Track your **Friends Progress** on Codechef
+  3. Notifies about the **Latest Announcements** on codechef
+  4. Notifies about **all contests** (codechef as well as by other online JUDGES)
+  5. Notifies **codechef Upcoming** contests
   
 ## [Django Api End Points](https://codechef-api.herokuapp.com/)
 ![Django Apis](https://github.com/jhabarsingh/CODECHEF-APP/blob/main/app/assets/apis.png?raw=true)
@@ -75,7 +75,7 @@ expo start
 ```
 
 ## Install App On Mobile Using APK File
-  1. Go to `https://github.com/jhabarsingh/CODECHEF-APP/blob/main/apk/app-release.apk`
+  1. Click to The [**Link**](https://github.com/jhabarsingh/CODECHEF-APP/blob/main/apk/app-release.apk)
   2. Download the apk file 
   3. Install in on your Mobile Device or Android Emulator
 
