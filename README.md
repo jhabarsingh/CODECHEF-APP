@@ -82,7 +82,7 @@ expo start
 ## Install App On Mobile Using APK File
   1. Click to The [**Link**](https://github.com/jhabarsingh/CODECHEF-APP/blob/main/apk/app-release.apk)
   2. Download the apk file 
-  3. Install in on your Mobile Device or Android Emulator
+  3. Install it on your Mobile Device or Android Emulator
 
 
 
