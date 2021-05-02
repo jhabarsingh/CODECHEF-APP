@@ -20,12 +20,12 @@ const Drawer = createDrawerNavigator();
 const DrawerNavigator = () => {
   return (
     <Drawer.Navigator>
-      <Drawer.Screen name="Home" component={MainStackNavigator} />
-      <Drawer.Screen name="Contact" component={ContactStackNavigator} />
-      <Drawer.Screen name="About" component={AboutStackNavigator} />
-      <Drawer.Screen name="Upcoming Contests" component={UpcomingStackNavigator} />
-      <Drawer.Screen name="Report Bug" component={ReportBugStackNavigator} />
-      <Drawer.Screen name="User" component={UserStackNavigator} />
+      <Drawer.Screen name="Codechef Profile" component={MainStackNavigator} />
+      <Drawer.Screen name="Codechef Contests" component={UpcomingStackNavigator} />
+      <Drawer.Screen name="All Contests" component={ContactStackNavigator} />
+      <Drawer.Screen name="Announements" component={AboutStackNavigator} />
+      <Drawer.Screen name="Report Bugs" component={ReportBugStackNavigator} />
+      <Drawer.Screen name="Developer" component={UserStackNavigator} />
     </Drawer.Navigator>
   );
 }
