@@ -74,6 +74,12 @@ npm install
 expo start
 ```
 
+## Install App On Mobile Using APK File
+  1. Go to `https://github.com/jhabarsingh/CODECHEF-APP/blob/main/apk/app-release.apk`
+  2. Download the apk file 
+  3. Install in on your Mobile Device or Android Emulator
+
+
 ## [Want To Contribute](https://medium.com/mindsdb/contributing-to-an-open-source-project-how-to-get-started-6ba812301738)
 ### You can contribute to this project in many ways
  1. You can create an issue if you find any bug.
