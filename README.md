@@ -39,12 +39,12 @@ Features Provided By the **DOCMED**
 
 ![MACHINE LEARNING](https://github.com/jhabarsingh/DOCMED/blob/main/docs/animations/ml_new.gif)
 
-## Project Setup
+## Django Backend Setup
 
 ### Using venv
 ```bash
-git clone https://github.com/jhabarsingh/DOCMED.git  
-cd DOCMED
+git clone https://github.com/jhabarsingh/CODECHEF-APP.git 
+cd CODECHEF-APP
 python3 -m venv env # Python 3.6.9 or 3.7.0 version 
 source env/bin/activate
 python3 -m pip install --upgrade pip
@@ -54,10 +54,10 @@ python manage.py runserver
 
 ### Using conda
 ```bash
-git clone https://github.com/jhabarsingh/DOCMED.git  
-cd DOCMED
-conda create -n docmed python==3.7 
-conda activate docmed
+git clone https://github.com/jhabarsingh/CODECHEF-APP.git 
+cd CODECHEF-APP
+conda create -n codechef python==3.7 
+conda activate codechef
 python3 -m pip install --upgrade pip
 pip install -r requirements.txt
 python manage.py runserver
@@ -67,9 +67,18 @@ python manage.py runserver
 
 ```bash
 sudo apt-get install docker docker-compose # Install docker, docker-compose on linux
-git clone https://github.com/jhabarsingh/DOCMED.git  
-cd DOCMED
+git clone https://github.com/jhabarsingh/CODECHEF-APP.git
+cd CODECHEF-APP
 sudo docker-compose up
+```
+
+## [React Native Expo Setup](https://dev.to/runosaduwa/how-to-install-react-native-with-expo-quick-easy-4j8j)
+
+```
+git clone https://github.com/jhabarsingh/CODECHEF-APP.git
+cd CODECHEF-APP/app
+npm install
+expo start
 ```
 
 ## [Want To Contribute](https://medium.com/mindsdb/contributing-to-an-open-source-project-how-to-get-started-6ba812301738)
