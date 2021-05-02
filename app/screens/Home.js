@@ -1,10 +1,13 @@
 import React, { Component } from 'react'
-import { View, Text, TouchableOpacity, TextInput, StyleSheet, SafeAreaView } from 'react-native'
+import { LogBox, View, Text, ScrollView, TouchableOpacity, TextInput, StyleSheet, SafeAreaView, FlatList } from 'react-native'
 import { Button } from 'react-native-elements/dist/buttons/Button';
 import { block } from 'react-native-reanimated';
 import { Icon } from 'react-native-elements'
+import { Card, Avatar, Badge } from 'react-native-elements'
+
 
 import UserDetail from './UserDetail';
+import ContestDetail from './ContestDetail';
 
 class Inputs extends Component {
    state = {
@@ -42,7 +45,7 @@ class Inputs extends Component {
       return response.json()
       })
       .then((datas) => {
-         this.setState({contests: datas})
+         this.setState({contests: datas.data})
          this.setState({done2: true});
       })
 
@@ -51,11 +54,14 @@ class Inputs extends Component {
       return response.json()
       })
       .then((datas) => {
-         this.setState({questions: datas})
+         console.log(datas);
           this.setState({done3: true});
       })
    }
 
+   componentDidMount() {
+      LogBox.ignoreLogs(['VirtualizedLists should never be nested']);
+  }
 
    render() {
       return (
@@ -79,7 +85,9 @@ class Inputs extends Component {
             </View>
          ) : 
          (
-            <View>
+            <SafeAreaView>
+               <ScrollView>
+               <View>
                <Button
                   icon={
                      <Icon
@@ -98,15 +106,32 @@ class Inputs extends Component {
                >
                </Button>
                
-               <SafeAreaView>
                   <UserDetail
                         data={this.state.data}
                         contests={this.state.contests}
                         questions={this.state.questions}
                      />
-               </SafeAreaView>
-
-            </View>
+                     <Card>
+                     <Badge style={{fontSize:5, width:10, padding: 10, margin:10}} value={this.state.contests == null ? 0: this.state.contests.length } status="error" />
+                        <Card.Title>CONTESTS 
+                        </Card.Title>
+                              <FlatList
+                              data={this.state.contests}
+                              keyExtractor={item => item.name.toString()}
+                              renderItem={({ item }) => <ContestDetail
+                                    name={item.name}
+                                    day={item.day}
+                                    month={item.month}
+                                    year={item.year}
+                                    rating={item.rating}
+                                    color={item.color}
+                              />
+                              }
+                           />
+                     </Card>
+                  </View>
+                  </ScrollView>
+            </SafeAreaView>
          )
       )
    }
