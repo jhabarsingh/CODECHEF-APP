@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { View, Text, TouchableOpacity, TextInput, StyleSheet } from 'react-native'
 import { AsyncStorage } from 'react-native';
+import { Button } from 'react-native-elements/dist/buttons/Button';
 import { block } from 'react-native-reanimated';
 
 
@@ -52,9 +53,18 @@ class Inputs extends Component {
             </View>
          ) : 
          (
-            <Text>
-               {this.state.profile}
-            </Text>
+            <View>
+               <Text>
+                  {this.state.profile}
+               </Text>
+               <TouchableOpacity
+                  style = {styles.submitButton}
+                  onPress = {
+                     () => this.setState({done: false})
+                  }>
+                  <Text> Refresh </Text>
+               </TouchableOpacity>
+            </View>
          )
       )
    }
