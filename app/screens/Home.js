@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
-import { View, Text, TouchableOpacity, TextInput, StyleSheet } from 'react-native'
+import { View, Text, TouchableOpacity, TextInput, StyleSheet, SafeAreaView } from 'react-native'
 import { Button } from 'react-native-elements/dist/buttons/Button';
 import { block } from 'react-native-reanimated';
 import { Icon } from 'react-native-elements'
+
+import UserDetail from './UserDetail';
 
 class Inputs extends Component {
    state = {
@@ -96,10 +98,14 @@ class Inputs extends Component {
                >
                </Button>
                
-               <Text>
-                  {this.state.profile}
-               </Text>
-               
+               <SafeAreaView>
+                  <UserDetail
+                        data={this.state.data}
+                        contests={this.state.contests}
+                        questions={this.state.questions}
+                     />
+               </SafeAreaView>
+
             </View>
          )
       )

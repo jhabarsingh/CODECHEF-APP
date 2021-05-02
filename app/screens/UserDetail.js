@@ -113,12 +113,21 @@ const userDetail = ({data, contests, questions}) => {
                 <Text style={styles.text}>
                     <Badge value={data["rating"]} status="error" />
                 </Text>
-                <Text style={styles.text1}>
-                    {`${data["City:"]}, ${data["Country:"]}`}
-                </Text>
-                <Text style={styles.text1}>
-                    {`${data["Institution:"]}`}
-                </Text>
+                {
+                    (data["City:"] == undefined && data["Country:"] == undefined) ? null : (
+                        <Text style={styles.text1}>
+                            {`${data["City:"]}, ${data["Country:"]}`}
+                        </Text>
+                    )
+                }
+                {
+                    data["Institution:"] == undefined ? null : (
+                        <Text style={styles.text1}>
+                            {`${data["Institution:"]}`}
+                        </Text>
+                    )
+                }
+
                 
                 <Text style={styles.text3}>
                     {
