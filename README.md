@@ -1,4 +1,4 @@
-# DOCMED  ⚡️ [![GitHub](https://img.shields.io/github/license/jhabarsingh/CODECHEF-APP?color=blue)](https://github.com/jhabarsingh/DOCMED/blob/master/LICENSE) [![GitHub stars](https://img.shields.io/github/stars/jhabarsingh/CODECHEF-APP)](https://github.com/jhabarsingh/CODECHEF-APP/stargazers)  [![GitHub contributors](https://img.shields.io/github/contributors/jhabarsingh/CODECHEF-APP.svg)](https://github.com/jhabarsingh/CODECHEF-APP/graphs/contributors)  [![GitHub issues](https://img.shields.io/github/issues/jhabarsingh/CODECHEF-APP.svg)](https://github.com/jhabarsingh/CODECHEF-APP/issues) [![GitHub forks](https://img.shields.io/github/forks/jhabarsingh/CODECHEF-APP.svg?style=social&label=Fork)](https://GitHub.com/jhabarsingh/CODECHEF-APP/network/)
+# CODECHEF-APP  ⚡️ [![GitHub](https://img.shields.io/github/license/jhabarsingh/CODECHEF-APP?color=blue)](https://github.com/jhabarsingh/DOCMED/blob/master/LICENSE) [![GitHub stars](https://img.shields.io/github/stars/jhabarsingh/CODECHEF-APP)](https://github.com/jhabarsingh/CODECHEF-APP/stargazers)  [![GitHub contributors](https://img.shields.io/github/contributors/jhabarsingh/CODECHEF-APP.svg)](https://github.com/jhabarsingh/CODECHEF-APP/graphs/contributors)  [![GitHub issues](https://img.shields.io/github/issues/jhabarsingh/CODECHEF-APP.svg)](https://github.com/jhabarsingh/CODECHEF-APP/issues) [![GitHub forks](https://img.shields.io/github/forks/jhabarsingh/CODECHEF-APP.svg?style=social&label=Fork)](https://GitHub.com/jhabarsingh/CODECHEF-APP/network/)
 
 <p align="center">
   <img src="https://github.com/jhabarsingh/CODECHEF-APP/blob/main/app/assets/codechef.png?raw=true" />
@@ -16,28 +16,13 @@
 </div>
 </details>
 
-## Abstract
-To improve the conventional diagnostic procedures as they are prone to human
-mistakes and these are slow, expensive and not equally accessible to everyone therefore 
-we developed an efficient ML model for predicting the possibility of various
-diseases like covid, viral fever, dengue etc and integrate it with an interactive web
-based dashboard which will also provide some additional insights and
-recommendations over the user’s medical data.
-[Read More](https://docs.google.com/document/d/1q19CVPYDygCHwYQ6YYb1oWLqrlC6ymcc14U_EjeX64w/edit?usp=sharing)
-
-
-![HOME PAGE](https://github.com/jhabarsingh/Covid-Assistant/blob/main/docs/animations/chatbot.gif)
-
-## Features
-Features Provided By the **DOCMED**
-  1. CHATBOT **COVAT** TO RESOLVE YOUR QUERIES
-  2. ML MODEL TO PREDICT COVID FROM **SYMTOMS**
-  3. ML MODEL TO PREDICT COVID FROM [**CHEST XRAY REPORT**](https://github.com/jhabarsingh/XRAY-COVID-PREDICTION)
-  4. ML MODEL TO PREDICT COVID FROM **CHEST CTSCAN REPORT**
-  6. CONSULT WITH A **DOCTORS** IN YOUR CITY
-  7. [**TRACK COVID CASES**](https://github.com/jhabarsingh/COTRACK) WORLD WIDE OR COUNTRY WISE
-
-![MACHINE LEARNING](https://github.com/jhabarsingh/DOCMED/blob/main/docs/animations/ml_new.gif)
+## About
+  [CODECHEF-APP]() is a Native Mobile app built using Django and React Native. It provides many functionalities:-
+  1. Track your Progress on Codechef
+  2. Track your Friends Progress on codechef
+  3. Notifies about the Latest Announcements on codechef
+  4. Notifies about all the contests List (codechef as well as by other online JUDGES)
+  5. Notifies codechef Upcoming contests
 
 ## Django Backend Setup
 
