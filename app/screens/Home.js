@@ -6,8 +6,9 @@ import { block } from 'react-native-reanimated';
 
 class Inputs extends Component {
    state = {
-      profile: '',
-      data: ''
+      profile: null,
+      data: null,
+      done: false
    }
    handleProfile = (text) => {
       this.setState({ profile: text })
@@ -18,13 +19,12 @@ class Inputs extends Component {
      .then((response) => {
       return response.json()
      })
-     .then((data) => {
-       if("details" in data) {
+     .then((datas) => {
+       if("details" in datas) {
          alert("User doesn't exist")
        }
        else {
-        this.data = data;
-        console.log(this.data)
+          this.setState({done: true});
        }
      })
    }
@@ -32,23 +32,30 @@ class Inputs extends Component {
 
    render() {
       return (
-         <View style = {styles.container}>
-            <TextInput style = {styles.input}
-               underlineColorAndroid = "transparent"
-               placeholder = "Codechef Profile"
-               placeholderTextColor = "#9a73ef"
-               autoCapitalize = "none"
-               onChangeText = {this.handleProfile}/>
-          
+         this.state.done == false ? (
+            <View style = {styles.container}>
+               <TextInput style = {styles.input}
+                  underlineColorAndroid = "transparent"
+                  placeholder = "Codechef Profile"
+                  placeholderTextColor = "#9a73ef"
+                  autoCapitalize = "none"
+                  onChangeText = {this.handleProfile}/>
             
-            <TouchableOpacity
-               style = {styles.submitButton}
-               onPress = {
-                  () => this.save(this.state.profile)
-               }>
-               <Text style = {styles.submitButtonText}> Search </Text>
-            </TouchableOpacity>
-         </View>
+               
+               <TouchableOpacity
+                  style = {styles.submitButton}
+                  onPress = {
+                     () => this.save(this.state.profile)
+                  }>
+                  <Text style = {styles.submitButtonText}> Search </Text>
+               </TouchableOpacity>
+            </View>
+         ) : 
+         (
+            <Text>
+               {this.state.profile}
+            </Text>
+         )
       )
    }
 }

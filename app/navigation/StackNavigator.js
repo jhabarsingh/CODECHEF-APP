@@ -23,7 +23,7 @@ const screenOptionStyle = {
 const MainStackNavigator = () => {
   return (
     <Stack.Navigator screenOptions={screenOptionStyle}>
-      <Stack.Screen name="Home" component={Home} />
+      <Stack.Screen name="Codechef Profile" component={Home} />
     </Stack.Navigator>
   );
 }
@@ -31,7 +31,7 @@ const MainStackNavigator = () => {
 const ContactStackNavigator = () => {
   return (
     <Stack.Navigator screenOptions={screenOptionStyle}>
-      <Stack.Screen name="Contact" component={Contact} />
+      <Stack.Screen name="All Contests" component={Contact} />
     </Stack.Navigator>
   );
 }
@@ -39,7 +39,7 @@ const ContactStackNavigator = () => {
 const AboutStackNavigator = () => {
   return (
     <Stack.Navigator screenOptions={screenOptionStyle}>
-      <Stack.Screen name="About" component={About} />
+      <Stack.Screen name="Announcements" component={About} />
     </Stack.Navigator>
   );
 }
@@ -63,7 +63,7 @@ const ReportBugStackNavigator = () => {
 const UserStackNavigator = () => {
   return (
     <Stack.Navigator screenOptions={screenOptionStyle}>
-      <Stack.Screen name="User" component={User} />
+      <Stack.Screen name="Developer" component={User} />
     </Stack.Navigator>
   );
 }
