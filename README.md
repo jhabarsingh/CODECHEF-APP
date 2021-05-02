@@ -64,7 +64,12 @@ sudo docker-compose up
 
 ## [React Native Expo Setup](https://dev.to/runosaduwa/how-to-install-react-native-with-expo-quick-easy-4j8j)
 
-[![Watch the video](https://github.com/jhabarsingh/CODECHEF-APP/blob/main/app/assets/thumbnail.jpg?raw=true)](https://www.youtube.com/watch?v=IRgjNln4s20)
+<p align="center" >
+  
+  [![Watch the video](https://github.com/jhabarsingh/CODECHEF-APP/blob/main/app/assets/thumbnail.jpg?raw=true)](https://www.youtube.com/watch?v=IRgjNln4s20)
+  <i align="center">Click On The Video To Watch Demo</i>
+
+</p>
 
 [Install node](https://www.geeksforgeeks.org/installation-of-node-js-on-linux/) | [Install React Native](https://code.likeagirl.io/say-hello-world-using-react-native-in-linux-15955986bc44)
 ```
