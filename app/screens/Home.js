@@ -45,7 +45,9 @@ class Inputs extends Component {
       return response.json()
       })
       .then((datas) => {
-         this.setState({contests: datas.data})
+         datas = datas.data;
+         datas.reverse();
+         this.setState({contests: datas})
          this.setState({done2: true});
       })
 
@@ -120,10 +122,11 @@ class Inputs extends Component {
                               keyExtractor={item => item.name.toString()}
                               renderItem={({ item }) => <ContestDetail
                                     name={item.name}
-                                    day={item.day}
-                                    month={item.month}
-                                    year={item.year}
+                                    day={item.getday}
+                                    month={item.getmonth}
+                                    year={item.getyear}
                                     rating={item.rating}
+                                    rank={item.rank}
                                     color={item.color}
                               />
                               }

@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Linking, Text, StyleSheet, Image } from 'react-native';
-
+import { Card, Icon, Avatar, Badge } from 'react-native-elements'
 const styles = StyleSheet.create({
     container: {
         flex: 1,
@@ -11,8 +11,9 @@ const styles = StyleSheet.create({
         marginTop: 8,
         marginBottom: 8,
         borderRadius: 5,
-        backgroundColor: '#FFF',
+        opacity: .7,
         elevation: 2,
+        color: 'white'
     },
     title: {
         fontSize: 16,
@@ -25,8 +26,10 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     description: {
-        fontSize: 11,
+        fontSize: 10,
         fontStyle: 'italic',
+        margin: 4,
+        padding: 2
     },
     photo: {
         height: 50,
@@ -34,14 +37,40 @@ const styles = StyleSheet.create({
     },
 });
 
-const ContestDetail = ({ name, day, month, year, rating, color }) => (
-    <View style={styles.container}>
+const getmonth = (day) => {
+    let map = new Map();
+    map["1"] = "Jan";
+    map["2"] = "Feb";
+    map["3"] = "Mar";
+    map["4"] = "Apr";
+    map["5"] = "May";
+    map["6"] = "Jun";
+    map["7"] = "Jul";
+    map["8"] = "Aug";
+    map["9"] = "Sep";
+    map["10"] = "Oct";
+    map["11"] = "Nov";
+    map["12"] = "Dec";
+    return map[day];
+}
+
+const ContestDetail = ({ name, day, month, year, rating, rank, color }) => (
+
+    <View style={{...styles.container, backgroundColor:color}}>
         <View style={styles.container_text}>
-            <Text >
+            <Text style={{fontSize: 11, fontWeight: 'bold'}}>
                 {name}
             </Text>
+            
             <Text style={styles.description}>
-                {day}
+                <Badge  value={`Rating - ${rating}`} status="warning" />
+            </Text>
+            <Text style={styles.description}>
+                <Badge  value={`Rank - ${rank}`} status="primary" />
+            </Text>
+
+            <Text style={styles.description}>
+                {`${day} - ${getmonth(month)} - ${year}`}
             </Text>
         </View>
 
