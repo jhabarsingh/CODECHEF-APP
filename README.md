@@ -16,6 +16,8 @@
 </div>
 </details>
 
+## Django Apis
+
 ![Django Apis](https://github.com/jhabarsingh/CODECHEF-APP/blob/main/app/assets/apis.png?raw=true)
 
 ## About
