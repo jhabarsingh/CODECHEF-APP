@@ -13,7 +13,9 @@
   <img title="Heroku"  src="https://www.thedevcoach.co.uk/wp-content/uploads/2020/04/heroku.png" height="50px"  style="margin-right:5px;"/> 
   <img title="React Native" src="https://www.appcoda.com/wp-content/uploads/2015/04/react-native.png" height="50px"   style="margin-right:5px;"/>
   <img  title="Beautiful Soup" src="https://funthon.files.wordpress.com/2017/05/bs.png" height="50px" style="margin-right:5px;" />
-  <img  title="Play Store" src="https://images.indianexpress.com/2019/03/google-play-store-1200.jpg" height="50px" style="margin-right:5px;" />
+  <!--
+    <img  title="Play Store" src="https://images.indianexpress.com/2019/03/google-play-store-1200.jpg" height="50px" style="margin-right:5px;" />
+  -->
   <img  title="Docker" src="https://pbs.twimg.com/profile_images/1273307847103635465/lfVWBmiW_400x400.png" height="50px" style="margin-right:5px;" />
 </div>
 </details>
