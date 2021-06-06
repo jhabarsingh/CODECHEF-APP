@@ -1,6 +1,6 @@
 **NOTES:**
 * [Video Link](https://www.youtube.com/watch?v=IRgjNln4s20)
-* [Codechef API](https://codechef-api.herokuapp.com/)
+* [Codechef API](https://codechef-api.herokuapp.com/) (Swagger Documentation)
 
 *To use the codechef Apis created by me click on the [Link](https://codechef-api.herokuapp.com/)*
 
